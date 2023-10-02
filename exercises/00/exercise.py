@@ -42,7 +42,6 @@ print("6.")
 # Doing this since my macbook does not have a gpu available
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
-
 torch.manual_seed(seed=1234)
 
 x = torch.rand([2, 3])
@@ -55,12 +54,14 @@ x_gpu = x.to(device)
 y_gpu = y.to(device)
 print(x_gpu)
 print(y_gpu)
+
 # 7. Perform a matrix multiplication on the tensors you created in 6
 # (again, you may have to adjust the shapes of one of the tensors).
 print("7.")
 
 z = x @ y.T
 print(z)
+
 # 8. Find the maximum and minimum values of the output of 7.
 print("8.")
 print(z.max())
@@ -70,6 +71,7 @@ print(z.min())
 print("9.")
 print(z.argmax())
 print(z.argmin())
+
 # 10. Make a random tensor with shape `(1, 1, 1, 10)` and then create
 # a new tensor with all the `1` dimensions removed to be left with a
 # tensor of shape `(10)`. Set the seed to `7` when you create it and
